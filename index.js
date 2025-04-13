@@ -4,6 +4,7 @@ let pergunta = ''
 let alternativas = []
 let questaoCompleta = ''
 
+const PROMPT_SIMPLIFICAR = 'Não precisa me gerar explicações, apenas me diga o valor da resposta correta: \n' 
 
 limparValores = () => {
 	pergunta = ''
@@ -14,6 +15,7 @@ limparValores = () => {
 obterPerguntas = () => {	
 	clear()
 	pergunta = PERGUNTA_PREFIX
+	pergunta += PROMPT_SIMPLIFICAR
 	pergunta += document.querySelector('.materialStyle').innerText
 
 	document.querySelectorAll('.quiz_blocks>li').forEach(x => alternativas.push(x.innerText))
